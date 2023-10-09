@@ -30,15 +30,14 @@ class methods:
         # Calculate percent by dividing total documented hours by total hours then multiplying by 100.
         documented_absence_percent = (documented_absence / total_hours) * 100
 
-
         # debugging: print(undocumented_absence_percent)
         # debugging: print(documented_absence_percent)
 
-        if undocumented_absence_percent > 10 or (undocumented_absence_percent > 5 and documented_absence_percent > 20):
+        if undocumented_absence_percent >= 10 or (undocumented_absence_percent >= 5 and documented_absence_percent >= 20):
             return f'Mister karakteren i faget | {undocumented_absence_percent}%'
-        elif documented_absence_percent > 20:
+        elif documented_absence_percent >= 20:
             return f'Send varsel om fare for å miste karakteren grunnet manglende vurderingsgrunnlag | {undocumented_absence_percent}%'
-        elif undocumented_absence_percent > 5:
+        elif undocumented_absence_percent >= 5:
             return f'Send varsel om fare for å miste karakteren grunnet fravær | {undocumented_absence_percent}%'
         else:
             return ''
